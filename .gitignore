@@ -1,0 +1,6 @@
+/Paymill-REST-*
+/.build
+/_build*
+/Build
+MYMETA.*
+!META.json
