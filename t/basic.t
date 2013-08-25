@@ -2,7 +2,7 @@ use strict;
 use Test::More;
 use Paymill::REST;
 
-# replace with the actual test
+# Just smokin'
 ok 1;
 
 done_testing;

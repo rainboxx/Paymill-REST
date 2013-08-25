@@ -4,6 +4,14 @@ use strict;
 use 5.008_005;
 our $VERSION = '0.01';
 
+my $PRIVATE_KEY = '';
+
+use Module::Find;
+
+BEGIN {
+    useall Paymill::REST;
+}
+
 1;
 __END__
 
@@ -11,15 +19,26 @@ __END__
 
 =head1 NAME
 
-Paymill::REST - Blah blah blah
+Paymill::REST - A wrapper around PAYMILL's payment API
 
 =head1 SYNOPSIS
 
   use Paymill::REST;
+  my $trx_api             = Paymill::REST::Transactions->new;
+  my $created_transaction = $trx_api->create(
+      {
+          amount      => 4200,
+          token       => '098f6bcd4621d373cade4e832627b4f6',
+          currency    => 'USD',
+          description => "Hitchhiker's Guide to the Galaxy",
+      }
+  );
 
 =head1 DESCRIPTION
 
-Paymill::REST is
+Paymill::REST is a wrapper around PAYMILL's payment API.
+
+Docs are still missing.
 
 =head1 AUTHOR
 
@@ -27,7 +46,7 @@ Matthias Dietrich E<lt>perl@rainboxx.deE<gt>
 
 =head1 COPYRIGHT
 
-Copyright 2013- Matthias Dietrich
+Copyright 2013 - Matthias Dietrich
 
 =head1 LICENSE
 
