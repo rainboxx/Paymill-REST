@@ -56,6 +56,17 @@
       }
    },
    "release_status" : "stable",
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/rainboxx/Paymill-REST/issues"
+      },
+      "homepage" : "https://github.com/rainboxx/Paymill-REST",
+      "repository" : {
+         "type" : "git",
+         "url" : "https://github.com/rainboxx/Paymill-REST.git",
+         "web" : "https://github.com/rainboxx/Paymill-REST"
+      }
+   },
    "version" : "0.01",
    "x_contributors" : [
       "Matthias Dietrich <perl@rb.ly>"

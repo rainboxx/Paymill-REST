@@ -13,3 +13,35 @@ sub list {
 
 no Moose::Role;
 1;
+
+__END__
+
+=encoding utf-8
+
+=head1 NAME
+
+Paymill::REST::Operations::List — List operation for L<Paymill::REST> as Moose Role
+
+=head1 FUNCTIONS
+
+=head2 list
+
+To fetch a list of items, eg. transactions or clients, via the PAYMILL
+REST API, use this method.
+
+Expects an hash ref as parameter which defines the filter and sort
+conditions.  Please refer to PAYMILL's API reference and use filters as
+key and their values as the key's values.
+
+=head1 AUTHOR
+
+Matthias Dietrich E<lt>perl@rainboxx.deE<gt>
+
+=head1 COPYRIGHT
+
+Copyright 2013 - Matthias Dietrich
+
+=head1 LICENSE
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.

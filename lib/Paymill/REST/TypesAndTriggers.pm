@@ -38,3 +38,31 @@ sub items_from_arrayref {
 
 no Moose::Util::TypeConstraints;
 1;
+__END__
+
+=encoding utf-8
+
+=head1 NAME
+
+Paymill::REST::TypesAndTriggers - Helper class
+
+=head1 DESCRIPTION
+
+Helper class defining types and triggers used internally for item's attributes.
+
+=head1 SEE ALSO
+
+L<Paymill::REST> for documentation.
+
+=head1 AUTHOR
+
+Matthias Dietrich E<lt>perl@rainboxx.deE<gt>
+
+=head1 COPYRIGHT
+
+Copyright 2013 - Matthias Dietrich
+
+=head1 LICENSE
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.

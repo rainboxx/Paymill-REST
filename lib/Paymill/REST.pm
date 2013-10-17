@@ -38,7 +38,62 @@ Paymill::REST - A wrapper around PAYMILL's payment API
 
 Paymill::REST is a wrapper around PAYMILL's payment API.
 
-Docs are still missing.
+=head1 GENERAL ARCHITECTURE
+
+It is intended that things such creating and retrieving items is done through
+operations called on the respective C<Paymill::REST::*> modules (a so called B<item factory>), so
+everything related to transactions is achieved
+through L<Paymill::REST::Transactions>.
+
+Each operation of those factories is returning one or a list of the
+appropriate item modules, so L<Paymill::REST::Transactions> is
+returning one or a list of L<Paymill::REST::Item::Transaction>.
+
+=head2 AVAILABLE OPERATIONS
+
+Not all operations are available to every item factory (currently only
+C<delete> is not available to L<Paymill::REST::Item::Refund>).
+
+=over 4
+
+=item Creating new items
+
+L<Paymill::REST::Operations::Create>
+
+=item Delete existing items
+
+L<Paymill::REST::Operations::Delete>
+
+=item Finding a single item
+
+L<Paymill::REST::Operations::Find>
+
+=item Listing all or a subset of items
+
+L<Paymill::REST::Operations::List>
+
+=back
+
+=head1 CONFIGURATION
+
+Each item factory inherits from L<Paymill::REST::Base>, which is
+holding all the configuration.  The following options are available:
+
+=over 4
+
+=item api_key
+
+Defines your private API key which you get from PAYMILL.
+
+=item proxy
+
+An L<URI> or URI string which is passed to L<LWP::UserAgent>'s C<proxy>
+method for connecting to the PAYMILL API.
+
+=back
+
+B<Note:> every other option you'll find in the code is only meant for
+development of this module and shouldn't be changed!
 
 =head1 AUTHOR
 
@@ -54,5 +109,23 @@ This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
 
 =head1 SEE ALSO
+
+=over 4
+
+=item Item factories:
+
+L<Paymill::REST::Clients>, L<Paymill::REST::Offers>, L<Paymill::REST::Payments>,
+L<Paymill::REST::Preauthorizations>, L<Paymill::REST::Refunds>,
+L<Paymill::REST::Subscriptions>, L<Paymill::REST::Transactions>,
+L<Paymill::REST::Webhooks>
+
+=item Item modules:
+
+L<Paymill::REST::Item::Client>, L<Paymill::REST::Item::Offer>, L<Paymill::REST::Item::Payment>,
+L<Paymill::REST::Item::Preauthorization>, L<Paymill::REST::Item::Refund>,
+L<Paymill::REST::Item::Subscription>, L<Paymill::REST::Item::Transaction>,
+L<Paymill::REST::Item::Webhook>
+
+=back
 
 =cut
