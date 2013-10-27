@@ -1,6 +1,7 @@
 Revision history for Paymill-REST
 
 {{$NEXT}}
+        - Marked as stable
 
 0.01  2013-10-27 23:06:04 CET
         - Initial release
