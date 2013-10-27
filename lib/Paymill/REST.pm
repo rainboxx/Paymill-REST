@@ -46,8 +46,8 @@ everything related to transactions is achieved
 through L<Paymill::REST::Transactions>.
 
 Each operation of those factories is returning one or a list of the
-appropriate item modules, so L<Paymill::REST::Transactions> is
-returning one or a list of L<Paymill::REST::Item::Transaction>.
+appropriate item modules, so operations called on L<Paymill::REST::Transactions>
+are returning one or a list of L<Paymill::REST::Item::Transaction>.
 
 =head2 AVAILABLE OPERATIONS
 
@@ -64,11 +64,11 @@ L<Paymill::REST::Operations::Create>
 
 L<Paymill::REST::Operations::Delete>
 
-=item Finding a single item
+=item Find a single item
 
 L<Paymill::REST::Operations::Find>
 
-=item Listing all or a subset of items
+=item List all or a subset of items
 
 L<Paymill::REST::Operations::List>
 
@@ -112,6 +112,10 @@ it under the same terms as Perl itself.
 
 =over 4
 
+=item PAYMILL:
+
+L<http://www.paymill.com>
+
 =item Item factories:
 
 L<Paymill::REST::Clients>, L<Paymill::REST::Offers>, L<Paymill::REST::Payments>,
@@ -125,6 +129,16 @@ L<Paymill::REST::Item::Client>, L<Paymill::REST::Item::Offer>, L<Paymill::REST::
 L<Paymill::REST::Item::Preauthorization>, L<Paymill::REST::Item::Refund>,
 L<Paymill::REST::Item::Subscription>, L<Paymill::REST::Item::Transaction>,
 L<Paymill::REST::Item::Webhook>
+
+=back
+
+=head1 TODO
+
+=over 4
+
+=item Add ability to save changes to item objects
+
+=item Add convenience operations (eg. C<refund> for transactions) where possible
 
 =back
 

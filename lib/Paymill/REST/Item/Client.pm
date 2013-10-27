@@ -12,6 +12,7 @@ has description => (is => 'ro', isa => 'Undef|Str');
 has email       => (is => 'ro', isa => 'Undef|Str');
 has created_at  => (is => 'ro', isa => DateTime, coerce => 1);
 has updated_at  => (is => 'ro', isa => DateTime, coerce => 1);
+has app_id      => (is => 'ro', isa => 'Undef|Str');
 
 has subscription => (
     is      => 'ro',
@@ -37,9 +38,9 @@ Paymill::REST::Item::Client - Item class for a client
 =head1 SYNOPSIS
 
   my $client_api = Paymill::REST::Clients->new;
-  $client = $client_api->find('tran_lk2j34h5lk34h5lkjh2');
+  $client = $client_api->find('client_lk2j34h5lk34h5lkjh2');
 
-  say $client->email;  // Prints email address assigned to the client
+  say $client->email;  # Prints email address assigned to the client
 
 =head1 DESCRIPTION
 
@@ -69,6 +70,10 @@ L<DateTime> object indicating the date of the creation as returned by the API
 
 L<DateTime> object indicating the date of the last update as returned by the API
 
+=item app_id
+
+String representing the app id that created this client
+
 =back
 
 =head1 SUB ITEMS
@@ -86,6 +91,8 @@ See also L<Paymill::REST::Item::Subscription>.
 One or a list of payments, depends on the returned values from the API.
 
 See also L<Paymill::REST::Item::Payment>.
+
+=back
 
 =head1 AVAILABLE OPERATIONS
 
