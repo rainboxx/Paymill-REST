@@ -27,8 +27,8 @@ everything related to transactions is achieved
 through [Paymill::REST::Transactions](http://search.cpan.org/perldoc?Paymill::REST::Transactions).
 
 Each operation of those factories is returning one or a list of the
-appropriate item modules, so [Paymill::REST::Transactions](http://search.cpan.org/perldoc?Paymill::REST::Transactions) is
-returning one or a list of [Paymill::REST::Item::Transaction](http://search.cpan.org/perldoc?Paymill::REST::Item::Transaction).
+appropriate item modules, so operations called on [Paymill::REST::Transactions](http://search.cpan.org/perldoc?Paymill::REST::Transactions)
+are returning one or a list of [Paymill::REST::Item::Transaction](http://search.cpan.org/perldoc?Paymill::REST::Item::Transaction).
 
 ## AVAILABLE OPERATIONS
 
@@ -43,11 +43,11 @@ Not all operations are available to every item factory (currently only
 
     [Paymill::REST::Operations::Delete](http://search.cpan.org/perldoc?Paymill::REST::Operations::Delete)
 
-- Finding a single item
+- Find a single item
 
     [Paymill::REST::Operations::Find](http://search.cpan.org/perldoc?Paymill::REST::Operations::Find)
 
-- Listing all or a subset of items
+- List all or a subset of items
 
     [Paymill::REST::Operations::List](http://search.cpan.org/perldoc?Paymill::REST::Operations::List)
 
@@ -83,6 +83,10 @@ it under the same terms as Perl itself.
 
 # SEE ALSO
 
+- PAYMILL:
+
+    [http://www.paymill.com](http://www.paymill.com)
+
 - Item factories:
 
     [Paymill::REST::Clients](http://search.cpan.org/perldoc?Paymill::REST::Clients), [Paymill::REST::Offers](http://search.cpan.org/perldoc?Paymill::REST::Offers), [Paymill::REST::Payments](http://search.cpan.org/perldoc?Paymill::REST::Payments),
@@ -96,3 +100,8 @@ it under the same terms as Perl itself.
     [Paymill::REST::Item::Preauthorization](http://search.cpan.org/perldoc?Paymill::REST::Item::Preauthorization), [Paymill::REST::Item::Refund](http://search.cpan.org/perldoc?Paymill::REST::Item::Refund),
     [Paymill::REST::Item::Subscription](http://search.cpan.org/perldoc?Paymill::REST::Item::Subscription), [Paymill::REST::Item::Transaction](http://search.cpan.org/perldoc?Paymill::REST::Item::Transaction),
     [Paymill::REST::Item::Webhook](http://search.cpan.org/perldoc?Paymill::REST::Item::Webhook)
+
+# TODO
+
+- Add ability to save changes to item objects
+- Add convenience operations (eg. `refund` for transactions) where possible
