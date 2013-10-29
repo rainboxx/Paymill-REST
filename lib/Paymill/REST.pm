@@ -24,6 +24,10 @@ Paymill::REST - A wrapper around PAYMILL's payment API
 =head1 SYNOPSIS
 
   use Paymill::REST;
+  
+  # only once
+  $Paymill::REST::PRIVATE_KEY = '<YOUR PRIVATE API KEY>';
+  
   my $trx_api             = Paymill::REST::Transactions->new;
   my $created_transaction = $trx_api->create(
       {
@@ -77,18 +81,25 @@ L<Paymill::REST::Operations::List>
 =head1 CONFIGURATION
 
 Each item factory inherits from L<Paymill::REST::Base>, which is
-holding all the configuration.  The following options are available:
+holding all the configuration.  The following options are available,
+pass them to C<new>:
 
 =over 4
 
 =item api_key
 
-Defines your private API key which you get from PAYMILL.
+Defines your private API key which you get from PAYMILL.  Should be set
+as C<$Paymill::REST::PRIVATE_KEY> as seen in the synopsis above instead
+of passing it to the constructor.
 
 =item proxy
 
 An L<URI> or URI string which is passed to L<LWP::UserAgent>'s C<proxy>
 method for connecting to the PAYMILL API.
+
+=item debug
+
+Setting this to C<1> results in debug messages printed to C<STDOUT>.
 
 =back
 
