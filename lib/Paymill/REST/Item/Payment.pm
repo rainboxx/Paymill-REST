@@ -9,7 +9,7 @@ has _factory => (is => 'ro', isa => 'Object');
 
 has id           => (is => 'ro', isa => 'Str');
 has type         => (is => 'ro', isa => 'CCorDebit');
-has client       => (is => 'ro', isa => 'Str');
+has client       => (is => 'ro', isa => 'Undef|Str');
 has expire_month => (is => 'ro', isa => 'Int');
 has expire_year  => (is => 'ro', isa => 'Int');
 has last4        => (is => 'ro', isa => 'Int');
