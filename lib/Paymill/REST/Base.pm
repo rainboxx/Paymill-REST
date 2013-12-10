@@ -33,6 +33,8 @@ has agent_name =>
 has base_url =>
     (is => 'rw', required => 0, isa => Uri, coerce => 1, default => sub { to_Uri('https://api.paymill.com/v2/') });
 
+has data_count => (is => 'rw', required => 1, isa => 'Int', default => 0);
+
 sub _build_item {
     my $self       = shift;
     my $item_attrs = shift;
@@ -79,9 +81,17 @@ sub _build_items {
 
     $type = $self->type if $self->can('type');
 
-    # Remove "data" root if it exists
-    if (ref $hashed_items eq 'HASH' && exists $hashed_items->{data}) {
-        $hashed_items = $hashed_items->{data};
+    if (ref $hashed_items eq 'HASH') {
+
+        # Set data_count to current value
+        if (exists $hashed_items->{data_count}) {
+            $self->data_count($hashed_items->{data_count});
+        }
+
+        # Remove "data" root if it exists
+        if (exists $hashed_items->{data}) {
+            $hashed_items = $hashed_items->{data};
+        }
     }
 
     my @items;
