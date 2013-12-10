@@ -5,6 +5,12 @@ Paymill::REST - A wrapper around PAYMILL's payment API
 # SYNOPSIS
 
     use Paymill::REST;
+    
+
+    # only once
+    $Paymill::REST::PRIVATE_KEY = '<YOUR PRIVATE API KEY>';
+    
+
     my $trx_api             = Paymill::REST::Transactions->new;
     my $created_transaction = $trx_api->create(
         {
@@ -54,16 +60,23 @@ Not all operations are available to every item factory (currently only
 # CONFIGURATION
 
 Each item factory inherits from [Paymill::REST::Base](http://search.cpan.org/perldoc?Paymill::REST::Base), which is
-holding all the configuration.  The following options are available:
+holding all the configuration.  The following options are available,
+pass them to `new`:
 
 - api\_key
 
-    Defines your private API key which you get from PAYMILL.
+    Defines your private API key which you get from PAYMILL.  Should be set
+    as `$Paymill::REST::PRIVATE_KEY` as seen in the synopsis above instead
+    of passing it to the constructor.
 
 - proxy
 
     An [URI](http://search.cpan.org/perldoc?URI) or URI string which is passed to [LWP::UserAgent](http://search.cpan.org/perldoc?LWP::UserAgent)'s `proxy`
     method for connecting to the PAYMILL API.
+
+- debug
+
+    Setting this to `1` results in debug messages printed to `STDOUT`.
 
 __Note:__ every other option you'll find in the code is only meant for
 development of this module and shouldn't be changed!
