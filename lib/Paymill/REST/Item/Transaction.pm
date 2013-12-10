@@ -15,7 +15,7 @@ has created_at    => (is => 'ro', isa => DateTime, coerce => 1);
 has updated_at    => (is => 'ro', isa => DateTime, coerce => 1);
 has status        => (is => 'ro', isa => 'TxStatus');
 has response_code => (is => 'ro', isa => 'Int');
-has short_id      => (is => 'ro', isa => 'Str');
+has short_id      => (is => 'ro', isa => 'Undef|Str');
 has invoices      => (is => 'ro', isa => 'Undef|ArrayRef');
 has fees          => (is => 'ro', isa => 'Undef|ArrayRef');
 has app_id        => (is => 'ro', isa => 'Undef|Str');
