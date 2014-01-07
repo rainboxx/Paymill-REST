@@ -6,11 +6,9 @@ Paymill::REST - A wrapper around PAYMILL's payment API
 
     use Paymill::REST;
     
-
     # only once
     $Paymill::REST::PRIVATE_KEY = '<YOUR PRIVATE API KEY>';
     
-
     my $trx_api             = Paymill::REST::Transactions->new;
     my $created_transaction = $trx_api->create(
         {
